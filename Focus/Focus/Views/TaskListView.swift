@@ -10,11 +10,7 @@ import SwiftUI
 struct TaskListView: View {
     let tasks : TaskGroup
     var body: some View {
-        for task in tasks {
-            HStack {
-                Text(task.title)
-            }
-        }
+        Text("Hello world")
     }
 }
 

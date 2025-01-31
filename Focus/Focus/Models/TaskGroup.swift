@@ -52,7 +52,7 @@ class TaskGroup: Identifiable, Sequence {
     static func examples() -> TaskGroup {
         let task1 = Task(title: "Leetcode")
         let task2 = Task(title: "Poker project")
-        let task2 = Task(title: "Job Applications")
+        let task3 = Task(title: "Job Applications")
         let group = TaskGroup(title: "Professional")
         group.tasks = [task1, task2]
         return group
