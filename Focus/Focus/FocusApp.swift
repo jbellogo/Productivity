@@ -11,7 +11,7 @@ import SwiftUI
 struct FocusApp: App {
     var body: some Scene {
         WindowGroup {
-            FocusTaskView(task: Task(title: "Focus Task"))
+            FocusTaskView(task: Task(title: "Study Math", measurement: "1hr"))
         }
         .windowLevel(.floating) // Use it here.
     }

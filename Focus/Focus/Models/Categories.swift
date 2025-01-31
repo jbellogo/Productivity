@@ -1,5 +1,5 @@
 //
-//  TaskGroup.swift
+//  Category.swift
 //  Focus
 //
 //  Created by Juan Bello on 2025-01-30.
@@ -8,9 +8,10 @@
 import Foundation
 
 
-struct TaskGroupIterator: IteratorProtocol {
+struct CategoryIterator: IteratorProtocol {
     private var currentIndex = 0
     private let tasks: [Task]
+    var color: String = "blue" // To distinguish between categories
 
     init(tasks: [Task]) {
         self.tasks = tasks
@@ -23,8 +24,7 @@ struct TaskGroupIterator: IteratorProtocol {
     }
 }
 
-class TaskGroup: Identifiable, Sequence {
-    let id: UUID = UUID()
+class Category: Identifiable, Sequence {
     var title: String
     var tasks: [Task] = []
     
@@ -32,9 +32,9 @@ class TaskGroup: Identifiable, Sequence {
         self.title = title
     }
     
-    // Conforming to Sequence (to be able to call: for i in taskGroup)
-    func makeIterator() -> TaskGroupIterator {
-        return TaskGroupIterator(tasks: tasks)
+    // Conforming to Sequence (to be able to call: for task in category)
+    func makeIterator() -> CategoryIterator {
+        return CategoryIterator(tasks: tasks)
     }
         
     func addTask(_ task: Task) -> Void {
@@ -49,12 +49,12 @@ class TaskGroup: Identifiable, Sequence {
         }
     }
     
-    static func examples() -> TaskGroup {
-        let task1 = Task(title: "Leetcode")
-        let task2 = Task(title: "Poker project")
-        let task3 = Task(title: "Job Applications")
-        let group = TaskGroup(title: "Professional")
-        group.tasks = [task1, task2]
+    static func example() -> Category {
+        let task1 = Task(title: "Leetcode", measurement: "1 question")
+        let task2 = Task(title: "Poker project", measurement: "1 commit")
+        let task3 = Task(title: "Notes project", measurement: "1hr")
+        let group = Category(title: "Programming")
+        group.tasks = [task1, task2, task3]
         return group
     }
 }

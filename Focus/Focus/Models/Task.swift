@@ -11,7 +11,15 @@ class Task : Identifiable, Equatable {
     let id: UUID = UUID()
     var title: String
     var description: String?
+    var measurement: String // Ex. 1hr, 1000 words, 1 github commit, etc.
+    var averageTime: TimeInterval? = nil
+
+    var frequency: String = "Daily" // Ex. Daily, Weekly123456, Monthly, Yearly. The numbers after Weekly encode the days of the week.
     
+    // var category: Category 
+    // Why don't we just have a category property as opposed to a Category class? 
+    // Because we want to organize tasks and show them by categories. 
+   
     @Published var isCompleted: Bool = false
     @Published var timeElapsed: TimeInterval = 0
     
@@ -21,8 +29,9 @@ class Task : Identifiable, Equatable {
     // Maybe subtasks?
     
     
-    init(title: String, description: String? = nil) {
+    init(title: String, measurement: String, description: String? = nil) {
         self.title = title
+        self.measurement = measurement
         self.description = description
     }
     
@@ -50,7 +59,7 @@ class Task : Identifiable, Equatable {
    }
     
     static func example() -> Task{
-        let task = Task(title: "Learn SwiftUI")
+        let task = Task(title: "Learn SwiftUI", measurement: "1hr")
         return task
     }
 }
