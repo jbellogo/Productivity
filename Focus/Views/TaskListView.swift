@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TaskListView: View {
-    let myCategory : Category
+    let myCategory : Category;
       var body: some View {
         List {
             ForEach(myCategory.tasks) { task in
