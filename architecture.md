@@ -1,7 +1,9 @@
 
 # Architecture of Focus App
 
-Tasks will be daily tasks, the app will set them daily, and only record competion times for data. 
+
+Tasks will have reapeat="daily" attribute set by default. The app will update the task board daily. 
+
 
 Categories (currently TaskGroup):
 - high level objectives, these are categories.
