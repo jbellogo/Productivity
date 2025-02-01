@@ -25,6 +25,7 @@ struct TaskListView: View {
                     
                                     
                     Spacer()
+                    
                     NavigationLink(destination: FocusTaskView(task: task)) {
                         Text("Start")
                     }

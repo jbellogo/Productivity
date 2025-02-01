@@ -1,6 +1,9 @@
 
 # Architecture of Focus App
 
+Applying the following tree-like breakdowow for tasks:
+
+![image](./img/task-tree.png)
 
 Tasks will have reapeat="daily" attribute set by default. The app will update the task board daily. 
 
